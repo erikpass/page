@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Windows XP Landing Page</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="desktop">
+      <h1 class="title">Welcome to Windows XP</h1>
+      <p class="subtitle">Experience the classic interface</p>
+      <button class="start-button">Get Started</button>
+      <div class="icons">
+        <div class="icon">
+          <img src="https://via.placeholder.com/48x48/FFF/000?text=My+Computer" alt="My Computer">
+          <div class="icon-label">My Computer</div>
+        </div>
+        <div class="icon">
+          <img src="https://via.placeholder.com/48x48/FFF/000?text=Recycle+Bin" alt="Recycle Bin">
+          <div class="icon-label">Recycle Bin</div>
+        </div>
+        <div class="icon">
+          <img src="https://via.placeholder.com/48x48/FFF/000?text=Internet" alt="Internet">
+          <div class="icon-label">Internet Explorer</div>
+        </div>
+      </div>
+    </div>
+    <div class="start-menu-panel" id="start-menu-panel">
+      <ul>
+        <li>My Computer</li>
+        <li>Notepad</li>
+        <li>Internet Explorer</li>
+        <li>Windows Media Player</li>
+        <li>Calculator</li>
+        <li>Paint</li>
+        <li>Command Prompt</li>
+      </ul>
+    </div>
+    <div class="taskbar">
+      <button class="start-menu">Start</button>
+    </div>
+    <script>
+      const startMenuBtn = document.querySelector('.start-menu');
+      const startMenuPanel = document.getElementById('start-menu-panel');
+
+      startMenuBtn.addEventListener('click', () => {
+        startMenuPanel.style.display = startMenuPanel.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!startMenuBtn.contains(e.target) && !startMenuPanel.contains(e.target)) {
+          startMenuPanel.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
